@@ -1,0 +1,248 @@
+---
+title: "Week 01 Lecture"
+output: html_notebook
+---
+
+# Intro To Data Science
+
+Lecture, Goals, etc.
+
+
+## Tasks:
+- ~Please complete your name poster!~
+- Please complete the class survey.
+- Introductions: Who are you?
+- Course Description/Objectives
+- Discuss R, RStudio Cloud
+- Your First Plot
+- This week's lab
+- Reading
+- Your Questions/Concerns
+
+
+
+# Who are you?
+
+- Andy Choens, MSW
+- I lead the data science team at a healthcare startup that was in
+  Troy before the Pandemic. Now, I believe our address is Zoom.
+- I have a background in computer programming, statistical analysis,
+  healthcare, child welfare, and elder care.
+  
+OK - that's me. Who are you?
+
+# Course Description/Objectives
+
+> Data science is an interdisciplinary field that uses scientific
+> methods, processes, algorithms and systems to extract knowledge and
+> insights from data in various forms, both structured and
+> unstructured, similar to data mining.
+> 
+> Data science is a "concept to unify statistics, data analysis, machine
+> learning and their related methods" in order to "understand and
+> analyze actual phenomena" with data.[3] It employs techniques and
+> theories drawn from many fields within the context of mathematics,
+> statistics, information science, and computer science.
+> 
+> Turing award winner Jim Gray imagined data science as a "fourth
+> paradigm" of science (empirical, theoretical, computational and now
+> data-driven) and asserted that "everything about science is changing
+> because of the impact of information technology" and the data
+> deluge.
+
+[Data science](https://en.wikipedia.org/wiki/Data_science)
+
+## Data Science In One Image
+
+- Data Science is an interdisciplinary "fourth paradigm" of science.
+- Class materials will be here on GitHub: [github.com/intro-to-data/Class](https://github.com/intro-to-data/Class)
+
+```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics("./includes/Data_Science_VD.png")
+```
+
+Source: [DrewConway.com/zia/2013/3/26/the-data-science-venn-diagram](http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram)
+
+## Objectives:
+
+- Learn how to convert data into knowledge. Data is not knowledge. It
+  is just data. Knowledge is what is developed from the process of
+  understanding the data.
+- Develop skills to help you solve complex problems by breaking these
+  problems down in smaller, more manageable steps.
+
+
+
+# Discuss R, RStudio Cloud
+
+- Projects will be completed using a programming language called R.
+- If you are interested, I can help you get R installed on your
+  computer.
+- In class, we will use R in RStudio Cloud.
+- You should have received an invitation to join my RStudio Cloud
+  instance.
+- Since we are all remote, I hope this works better than asking you to
+  log into the lab.
+- Has everyone received their invitation and logged on?
+
+
+
+# Your First Plot
+
+Learning Objectives:
+
+- What is a data frame?
+    - Rows V columns?
+    - What is a row of data?
+    - Data types?
+    - Why so many questions?
+- YOU CAN DO THIS!!!!
+- We are going to break this down into little bitty steps, and then
+  use those little steps to do more complex things.
+
+```{r}
+## Don't stress the details tonight.
+## We have all semester.
+library(tidyverse)
+library(ggrepel)
+
+data(starwars)
+starwars
+```
+
+Things we need to discuss:
+
+- What is a data frame?
+    - Rows V columns?
+    - What is a row of data?
+    - Data types?
+    - Why so many questions?
+    
+Now, let's do a little more programming.
+
+```{r}
+ggplot(
+    data = starwars,
+    mapping = aes(x = homeworld)
+    ) +
+    geom_bar()
+```
+
+I can't read the X Axis can you?
+
+
+```{r}
+ggplot(
+    data = starwars,
+    mapping = aes(y = homeworld)
+    ) +
+    geom_bar()
+```
+
+Much better!
+
+```{r}
+
+# Can YOU draw a bar plot showing the number of characters by species?
+
+```
+
+```{r}
+ggplot(
+    data = starwars,
+    mapping = aes(x = mass, y = height)
+    ) +
+    geom_point()
+```
+
+We've got ONE REALLY heavy character.
+
+
+```{r}
+ggplot(
+    data = starwars,
+    mapping = aes(x = mass, y = height, label = name)
+    ) +
+    geom_point() +
+    geom_text_repel()
+```
+
+Damn Hutts.
+
+OK, let's drop the anyone more than 1,000 pounds from our "analysis"
+
+```{r}
+lighter_starwars <-
+    starwars %>%
+    filter(mass < 1000)
+
+ggplot(
+    data = lighter_starwars,
+    mapping = aes(x = mass, y = height, label = name)
+    ) +
+    geom_point() +
+    geom_text_repel()
+```
+
+And now a basic regression line.
+
+```{r}
+ggplot(
+    data = lighter_starwars,
+    mapping = aes(x = mass, y = height, label = name)
+    ) +
+    geom_point() +
+    geom_smooth(method = "lm", se = TRUE) +
+    geom_text_repel()
+```
+
+Last challenge for tonight:
+
+```{r}
+## - Load the midwest data set.
+## - What is the relationship between college education and poverty?
+## - Hint: Look at the percollege and percbelowpoverty
+data(midwest)
+?midwest
+
+## YOUR TURN!
+
+```
+
+
+
+# This week's lab
+
+There isn't one. Wish I could have actually seen the look on your
+face. Zoom really takes the pizzazz out of practical jokes.
+
+- There will be a lab due each week this semester, except for this
+  "week" and the week of the final.
+- You will be given access to the week's lab on Monday.
+- The lab is due that Saturday at midnight, not that I suggest you
+  spend Saturday night working on my lab (or any other lab, frankly).
+- Completing the lab will require you to demonstrate skills discussed
+  in class and in the reading/videos.
+- If you have questions about the lab, feel free to contact me.
+- We can also discuss your questions during class-time that week.
+
+
+
+# Reading
+
+- 
+
+
+
+# Your Questions/Concerns
+
+- Programming is not an easy thing to wrap your head around.
+- It _is_ frustrating at times.
+- Last year, the first year we used Canvas, I tried to use the
+  message-board/chat feature. For some assignments it worked
+  "OK". But, honestly, it did not achieve the results I wanted.
+- So, feedback request. I would like to have a moderated discussion
+  forum for this class. It would make it easier for me to support you.
+- More importantly, it would make it easier for you to support each
+  other.
+- ???
