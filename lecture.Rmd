@@ -225,12 +225,18 @@ face. Zoom really takes the pizzazz out of practical jokes.
   in class and in the reading/videos.
 - If you have questions about the lab, feel free to contact me.
 - We can also discuss your questions during class-time that week.
-
+- Now let's briefly LOOK at what a lab would have looked like if I
+  were an evil genius.
 
 
 # Reading
 
-- 
+- [R4DS: Introduction](http://r4ds.had.co.nz/introduction.html)
+- [IMNS: Case Study and Data Basics](https://openintro-ims.netlify.app/getting-started-with-data.html#basic-stents-strokes)
+    - User beware, this thing just kinda keeps going.
+    - _STOP_ at `Sampling principles and strategies`.
+
+https://d33wubrfki0l68.cloudfront.net/571b056757d68e6df81a3e3853f54d3c76ad6efc/32d37/diagrams/data-science.png
 
 
 

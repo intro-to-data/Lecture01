@@ -1,0 +1,13 @@
+---
+title: "Week 01 Lab"
+output: html_notebook
+---
+
+So, not actually a lab. But, if I were a lab, I would include
+instructions and maybe some demo code like this.
+
+```{r}
+a <- 1
+b <- 2
+a + b
+```
