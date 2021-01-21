@@ -76,7 +76,12 @@ Source: [DrewConway.com/zia/2013/3/26/the-data-science-venn-diagram](http://drew
 
 ## Objectives:
 
-https://d33wubrfki0l68.cloudfront.net/571b056757d68e6df81a3e3853f54d3c76ad6efc/32d37/diagrams/data-science.png
+```{r echo=FALSE, out.width='100%'}
+url <- "https://d33wubrfki0l68.cloudfront.net/571b056757d68e6df81a3e3853f54d3c76ad6efc/32d37/diagrams/data-science.png"
+knitr::include_graphics(url)
+```
+
+
 
 - Learn how to convert data into knowledge. Data is not knowledge. It
   is just data. Knowledge is what is developed from the process of
