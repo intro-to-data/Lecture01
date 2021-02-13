@@ -1,7 +1,7 @@
 ---
 title: "Bechdel"
 author: "Your Name Here"
-output: github_document
+output: html_notebook
 ---
 
 In this mini analysis we work with the data used in the
@@ -10,7 +10,7 @@ Hollywood's Exclusion of
 Women"](https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/).
 Your task is to fill in the blanks denoted by `___`.
 
-## Data and packages
+# Setup
 
 - Observe how this lab combines R syntax with regular language.
 - The R syntax parts are called code chunks. You can run one of these
@@ -22,18 +22,21 @@ Your task is to fill in the blanks denoted by `___`.
 - For more information on the Bechdel test, see [Wikipedia - Bechdel
   Test](https://en.wikipedia.org/wiki/Bechdel_test)
 
-```{r load-packages, message=FALSE}
+# Setup
+
+```{r message=FALSE}
 ## Loading packages, and why we do this first is something we will discuss in more detail later in the class.
 library(fivethirtyeight)
 library(tidyverse)
 ```
 
-The dataset contains information on `r nrow(bechdel)` movies released
+The data set contains information on `r nrow(bechdel)` movies released
 between `r min(bechdel$year)` and `r max(bechdel$year)`.  However
 we'll focus our analysis on movies released between 1990 and 2013.
 
 ```{r}
-bechdel90_13 <- bechdel %>% 
+bechdel90_13 <- 
+  bechdel %>% 
   filter(between(year, 1990, 2013))
 ```
 

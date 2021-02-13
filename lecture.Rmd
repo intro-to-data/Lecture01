@@ -113,7 +113,12 @@ Learning Objectives:
 - We are going to break this down into little bitty steps, and then
   use those little steps to do more complex things.
 
+# Setup
+
+To make sure you have everything loaded you will need for the lecture/lab, look for a section labeled "Setup".
+
 ```{r}
+rm(list = ls())
 ## Don't stress the details tonight.
 ## We have all semester.
 library(tidyverse)
