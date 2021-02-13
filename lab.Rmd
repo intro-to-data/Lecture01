@@ -25,6 +25,7 @@ Your task is to fill in the blanks denoted by `___`.
 # Setup
 
 ```{r message=FALSE}
+rm(list = ls())
 ## Loading packages, and why we do this first is something we will discuss in more detail later in the class.
 library(fivethirtyeight)
 library(tidyverse)
