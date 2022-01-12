@@ -10,6 +10,8 @@ Hollywood's Exclusion of
 Women"](https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/).
 Your task is to fill in the blanks denoted by `___`.
 
+
+
 # Setup
 
 - Observe how this lab combines R syntax with regular language.
@@ -21,6 +23,8 @@ Your task is to fill in the blanks denoted by `___`.
       data is part of the `fivethirtyeight` pacakage.
 - For more information on the Bechdel test, see [Wikipedia - Bechdel
   Test](https://en.wikipedia.org/wiki/Bechdel_test)
+
+
 
 # Setup
 
