@@ -9,7 +9,7 @@ Lecture, Goals, etc.
 
 
 ## Tasks:
-- ~Please complete your name poster!~
+- Please complete your name poster!~
 - Please complete the class survey.
 - Log into RStudio Cloud. Please and thank you.
 - Introductions: Who are you?
@@ -24,7 +24,7 @@ BTW - if you haven't yet, PLEASE LOG INTO RSTUDIO CLOUD !!!
 
 
 
-# Who are you?
+# Who am I?
 
 - Andy Choens, MSW
 - I lead the data science team at a healthcare startup that was in
