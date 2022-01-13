@@ -1,9 +1,11 @@
 id,age,climate,pizza,degree,year,separate,do_math,like_math,counting,data_ever,data_tool,why,state,career
-2,19,NA,"I really like meat-lovers pizza (sausage, pepperoni, etc) with broccoli, spinach, and artichokes. ",Pre-Med,NA,"No, lecture and lab on Thursday night",3,Yes,No,Maybe,"Excel (or LibreOffice Sheets\, Google Sheets\, etc.)",Yes,NY,No
-5,NA,NA,Margarita ,Public Health,2nd Year (Sophmore),NA,3,No,No,Maybe,"Excel (or LibreOffice Sheets\, Google Sheets\, etc.),Python",Yes,NY,No
-3,NA,"Climate change exists, and humans definitely cause it.","I love this pizza from Salvatore's called the Chicken Charlie Pizza. THis pizza has a blue cheese base, wing sauce and has diced chicken fingers and lots of mozzarella. I live in Rochester and they have this special sauce called country sweet and it is delicious.",NA,2nd Year (Sophmore),"No, lecture and lab on Thursday night",3,Yes,Are you kidding? That's a question?,No,"Excel (or LibreOffice Sheets\, Google Sheets\, etc.)",Yes,New York,No
-4,20,NA,NA,Public Health,3rd Year (Junior),"Yes, separate lecture",3,Yes,Are you kidding? That's a question?,Yes,"Excel (or LibreOffice Sheets\, Google Sheets\, etc.)",Yes,Massachusetts,NA
-1,20,"Climate change exists, and humans may cause it.","It's honestly kind of a toss-up between different things.
+6,New York,NA,NA,2nd Year (Sophmore),NA,I have used data to make many important decisions as I am a very knowledged based person and like to do my own research before agreeing to almost everything. I also like to look at the news and different sources. This helps me understand the world that I live in.,"Excel (or LibreOffice Sheets\, Google Sheets\, etc.)",Yes,3,No,Are you kidding? That's a question?,Yes,"Climate change exists, and humans definitely cause it.","I love this pizza from Salvatore's called the Chicken Charlie Pizza. THis pizza has a blue cheese base, wing sauce and has diced chicken fingers and lots of mozzarella. I live in Rochester and they have this special sauce called country sweet and it is delicious."
+1,New York,62,20,3rd Year (Junior),Public Health,I just switched to public health from the pharmacy program so I have literally no experience with anything data related. All we do there is biology and chemistry stuff. ,"None\, see above",Yes,3,Maybe,Yes,No,NA,NA
+2,Ontario,NA,NA,4th Year (Senior),Public Health,No,"Excel (or LibreOffice Sheets\, Google Sheets\, etc.)",No,3,No,Yes,No,"Climate change exists, and humans definitely cause it.",Any pizza with pineapple on it.
+8,NY,69,NA,2nd Year (Sophmore),Public Health,Yes,"Excel (or LibreOffice Sheets\, Google Sheets\, etc.),Python",No,3,Maybe,No,Yes,NA,Margarita 
+3,New York,NA,19,2nd Year (Sophmore),Pre-Med,not really,"Excel (or LibreOffice Sheets\, Google Sheets\, etc.)",No,3,Yes,Yes,No,NA,veggie pizza with EXTRA jalepenos
+5,NY,NA,19,NA,Pre-Med,I have considered data (COVID case numbers) to make decisions about getting together with friends/family. ,"Excel (or LibreOffice Sheets\, Google Sheets\, etc.)",Yes,3,Maybe,No,Yes,NA,"I really like meat-lovers pizza (sausage, pepperoni, etc) with broccoli, spinach, and artichokes. "
+4,NA,NA,20,3rd Year (Junior),Other,"I mean, don't we all? We all use data constantly, it isn't all numerical. If we are speaking numerically, then of course a good chunk of us do, because of finances.","Excel (or LibreOffice Sheets\, Google Sheets\, etc.)",Yes,3,Yes,No,No,"Climate change exists, and humans may cause it.","It's honestly kind of a toss-up between different things.
 
 Sweet Sauce (which I have been informed is more of a Western New York thing), cup n'char pepperoni, extra cheese 
 
@@ -11,4 +13,5 @@ vs
 
 White Sauce (Garlic base), Barbeque Chicken Tenders, extra cheese.
 
-The cheese really makes it delicious no matter what. I don't have pizza often though.",Other,3rd Year (Junior),"Yes, separate lecture",3,Yes,No,Yes,"Excel (or LibreOffice Sheets\, Google Sheets\, etc.)",No,NA,NA
+The cheese really makes it delicious no matter what. I don't have pizza often though."
+7,Massachusetts,68,20,3rd Year (Junior),Public Health,"Yes, I have some formal experience using data to draw conclusions! I'm currently working on a Systematic Review research project with another professor at ACPHS. We have completed our data extraction in REDCap and are beginning to think about next steps for analysis. ","Excel (or LibreOffice Sheets\, Google Sheets\, etc.)",Yes,3,Yes,Are you kidding? That's a question?,Yes,NA,NA
