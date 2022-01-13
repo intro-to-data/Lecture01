@@ -5,14 +5,10 @@ output: html_notebook
 
 
 
-# Intro To Data Science
-
-Lecture, Goals, etc.
-
-
 # Goals
 
-- Reminder: record this lecture.
+- Reminder: record this lecture
+- Reminder: Please finish the class survey!!!
 - Intro to Intro To Data
 - Who am I?
 - Who are you?
