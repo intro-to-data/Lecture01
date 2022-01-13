@@ -18,7 +18,7 @@ Lecture, Goals, etc.
 - Who are you?
     - A mini primer of the whole semester.
     - How do you feel about Rick Astley?
-- Course Description, Objectives, 
+- Course Description, Objectives
 - Lab
     - You will need to be able to log into RStudio Cloud to complete
       the lab.
