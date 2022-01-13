@@ -39,7 +39,7 @@ comment(survey) <- questions
 View(survey)
 
 survey %>%
-    select(-name, -id, -sis_id, -section, -section_id, -section_sis_id) %>%
+    select(-name, -id, -sis_id, -section, -section_id, -section_sis_id, -used_data, -hope, -worries) %>%
     mutate(id = row_number()) %>%
     select(id, age:career) %>%
     sample_n(size = nrow(raw)) %>%

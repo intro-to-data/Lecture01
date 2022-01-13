@@ -1,158 +1,153 @@
 ---
-title: "Bechdel"
-author: "Your Name Here"
+title: "Star Wars Lab"
 output: html_notebook
 ---
 
-In this mini analysis we work with the data used in the
-FiveThirtyEight story titled ["The Dollar-And-Cents Case Against
-Hollywood's Exclusion of
-Women"](https://fivethirtyeight.com/features/the-dollar-and-cents-case-against-hollywoods-exclusion-of-women/).
-Your task is to fill in the blanks denoted by `___`.
+# Learning Objectives:
 
+- Learn about notebooks
+- What is a data frame?
+    - Rows V columns
+    - What is a row of data?
+    - Data types
+- Tour of the RStudio Cloud interface
+- How to run a code chunk
+- How to render a notebook
+- Structure of a R command (function)
+
+
+# Notebooks
+
+Our work will be managed in documents called notebooks. This document
+you are viewing is a notebook. A RMarkdown notebook combines plain
+text with R code to create a reproducible document.
+
+The lecture notes are a notebook. The lab is a notebook. The work we
+do for this class will always be in a notebook. I will make R scripts
+available for transparency when I hide things from you.
+
+In the data folder, there is a R script I wrote to scrub PII from the
+class survey.
 
 
 # Setup
 
-- Observe how this lab combines R syntax with regular language.
-- The R syntax parts are called code chunks. You can run one of these
-  code chunks by pressing the green arrow below.
-- To begin our analysis, we will first load some packages, to make R easier to use.
-    - It is a best practice to always load any/all packages you need BEFORE the rest of your script/program.
-    - You would then import/access your data, but in this case, the
-      data is part of the `fivethirtyeight` pacakage.
-- For more information on the Bechdel test, see [Wikipedia - Bechdel
-  Test](https://en.wikipedia.org/wiki/Bechdel_test)
+- To make sure you have everything loaded you will need for the
+  lecture/lab, look for a section labeled "Setup" and run the code
+  block in that section of the notebook.
+- Run the code chunk now, PLEASE!!!
+    - Use the little green arrow to the right of the editor window.
+    - Or use the keyboard shortcut, `Ctrl+Shift+Enter`
 
-
-
-# Setup
-
-```{r message=FALSE}
+```{r}
 rm(list = ls())
-## Loading packages, and why we do this first is something we will discuss in more detail later in the class.
-library(fivethirtyeight)
 library(tidyverse)
+library(ggrepel)
+data(starwars)
 ```
 
-The data set contains information on `r nrow(bechdel)` movies released
-between `r min(bechdel$year)` and `r max(bechdel$year)`.  However
-we'll focus our analysis on movies released between 1990 and 2013.
+
+
+# Data
 
 ```{r}
-bechdel90_13 <- 
-  bechdel %>% 
-  filter(between(year, 1990, 2013))
+starwars
 ```
 
-We use the R terminal to perform analyses not needed in our final
-output.
+- Observe how the results of the code are embedded in the notebook.
+    - When you run the code in a notebook, R creates a new file,
+      `lab.nb.html`, which contains the original code AND the HTML
+      containing the output.
+    - In a healthcare setting, this `nb.html` file must be carefully
+      protected because it can contain PHI.
+    - A .Rmd file only contains PHI if you enter it manually into the
+      text or code, and why on earth would you do that?
+- `starwars` is a data frame
+- What does a single row of data represent?
+- What kinds of data types do we have?
 
-Below: we want to replace the `___` with some code. Look in the
-previous code/paragraphs for inspiration. R's syntax may be foreign to
-you, but functions do things and they are usually named clearly, to
-help you make use of them.
+le
 
-There are `___` such movies.
+# Plotting
 
-The financial variables we'll focus on are the following:
-
--   `budget_2013`: Budget in 2013 inflation adjusted dollars
--   `domgross_2013`: Domestic gross (US) in 2013 inflation adjusted dollars
--   `intgross_2013`: Total International (i.e., worldwide) gross in 2013 inflation adjusted dollars
-
-And we'll also use the `binary` and `clean_test` variables for
-**grouping**.
-
-## Analysis
-
-Let's take a look at how median budget and gross vary by whether the
-movie passed the Bechdel test, which is stored in the `binary`
-variable.
-
-```{r message = FALSE}
-## Notice how this changes the GRAIN of the data.
-bechdel90_13 %>%
-  group_by(binary) %>%
-  summarise(med_budget = median(budget_2013),
-            med_domgross = median(domgross_2013, na.rm = TRUE),
-            med_intgross = median(intgross_2013, na.rm = TRUE))
-```
-
-Question: Why are we using median rather than average?
-
-Next, let's take a look at how median budget and gross vary by a more
-detailed indicator of the Bechdel test result.  This information is
-stored in the `clean_test` variable, which takes on the following
-values:
-
--   `ok` = passes test
--   `dubious`
--   `men` = women only talk about men
--   `notalk` = women don't talk to each other
--   `nowomen` = fewer than two women
-
-```{r message = FALSE}
-bechdel90_13 %>%
-  #group_by(___) %>%
-  summarise(med_budget = median(budget_2013),
-            med_domgross = median(domgross_2013, na.rm = TRUE),
-            med_intgross = median(intgross_2013, na.rm = TRUE))
-```
-
-In order to evaluate how return on investment varies among movies that
-pass and fail the Bechdel test, we'll first create a new variable
-called `roi` as the ratio of the gross to budget.
+- Our first few lectures/labs are focused on plotting/graphing data.
+- To run a single line of code within a code chunk, `Ctrl+Enter`.
 
 ```{r}
-bechdel90_13 <- bechdel90_13 %>%
-  mutate(roi = (intgross_2013 + domgross_2013) / budget_2013)
+ggplot(data = starwars, mapping = aes(x = homeworld)) +
+    geom_bar()
 ```
 
-Let's see which movies have the highest return on investment.
+I can't read the X Axis can you?
+
 
 ```{r}
-bechdel90_13 %>%
-  arrange(desc(roi)) %>% 
-  select(title, roi, year)
+ggplot(
+    data = starwars, mapping = aes(y = homeworld)) +
+    geom_bar()
 ```
 
-Below is a visualization of the return on investment by test result,
-however it's difficult to see the distributions due to a few extreme
-observations.
-
-```{r warning = FALSE}
-ggplot(data = bechdel90_13, 
-       mapping = aes(x = clean_test, y = roi, color = binary)) +
-  geom_boxplot() +
-  labs(title = "Return on investment vs. Bechdel test result",
-       x = "Detailed Bechdel result",
-       y = "___",
-       color = "Binary Bechdel result")
-```
-
-What are those movies with *very* high returns on investment?
+Much better!
 
 ```{r}
-bechdel90_13 %>%
-  filter(roi > 400) %>%
-  select(title, budget_2013, domgross_2013, year)
+
+# Can YOU draw a bar plot showing the number of characters by species?
+
 ```
 
-Zooming in on the movies with `roi < ___` provides a better view of
-how the medians across the categories compare:
-
-```{r warning = FALSE}
-ggplot(data = bechdel90_13, mapping = aes(x = clean_test, y = roi, color = binary)) +
-  geom_boxplot() +
-  labs(title = "Return on investment vs. Bechdel test result",
-       subtitle = "___", # Something about zooming in to a certain level
-       x = "Detailed Bechdel result",
-       y = "Return on investment",
-       color = "Binary Bechdel result") +
-  coord_cartesian(ylim = c(0, 15))
+```{r}
+ggplot(
+    data = starwars, mapping = aes(x = mass, y = height)) +
+    geom_point()
 ```
 
-Thank you for participating in your first lab. You will all get full
-credit for this lab simply by going into Canvas and marking the lab
-complete.
+We've got ONE REALLY heavy character.
+
+
+```{r}
+ggplot(
+    data = starwars, mapping = aes(x = mass, y = height, label = name)) +
+    geom_point() +
+    geom_text_repel()
+```
+
+Damn Hutts. Drop all beings which weigh more than 1,000 pounds from
+our analysis.
+
+```{r}
+lighter_starwars <-
+    starwars %>%
+    filter(mass < 1000)
+
+ggplot(
+    data = lighter_starwars,
+    mapping = aes(x = mass, y = height, label = name)
+) +
+    geom_point() +
+    geom_text_repel()
+```
+
+And now a basic regression line.
+
+```{r}
+ggplot(
+    data = lighter_starwars,
+    mapping = aes(x = mass, y = height, label = name)
+    ) +
+    geom_point() +
+    geom_smooth(method = "lm", se = TRUE) +
+    geom_text_repel()
+```
+
+Last challenge for tonight:
+
+```{r}
+## - Load the midwest data set.
+## - What is the relationship between college education and poverty?
+## - Hint: Look at the percollege and percbelowpoverty
+data(midwest)
+?midwest
+
+## YOUR TURN!
+
+```
