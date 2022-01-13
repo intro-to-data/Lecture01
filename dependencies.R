@@ -3,6 +3,7 @@
 p <- c(
     "ggrepel",
     "knitr",
+    "markdown",
     "tidyverse"
 )
 install.packages(p)
