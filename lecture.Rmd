@@ -46,8 +46,8 @@ survey <- read_csv("data/survey.csv")
 
 ## Survey Data
 
-```{r}
-survey %>% kable()
+```{r message=FALSE, warning=FALSE, page.printed=TRUE}
+survey %>% mutate(pizza = str_trunc(pizza, 50)) %>% kable()
 ```
 - Each row is a single survey entry.
 - Each column contains the answer for a single question.
@@ -97,7 +97,7 @@ ggplot(survey, aes(x = degree)) + geom_bar()
 
 ### What year are you in at ACPHS?
 
-```r
+```{r}
 ggplot(survey, aes(x = year)) + geom_bar()
 ```
 
@@ -106,7 +106,7 @@ ggplot(survey, aes(x = year)) + geom_bar()
 
 ### Lecture/Lab (Separate or combined?)
 
-```r
+```{r}
 ggplot(survey, aes(x = separate)) + geom_bar()
 ```
 
@@ -117,7 +117,7 @@ ggplot(survey, aes(x = separate)) + geom_bar()
 
 ### Do you like math?
 
-```r
+```{r}
 ggplot(survey, aes(x = like_math)) + geom_bar()
 ```
 
@@ -126,7 +126,7 @@ ggplot(survey, aes(x = like_math)) + geom_bar()
 
 ### Are  you good at counting things?
 
-```r
+```{r}
 survey %>%
     group_by(counting) %>%
     summarise(n = n())
@@ -190,13 +190,13 @@ Questions:
 
 ### Have you ever analyzed data?
 
-```r
+```{r}
 ggplot(survey, aes(x = data_ever)) + geom_bar()
 ```
 
 OK, so let's pause for a moment. There's more we could do here.
 
-```r
+```{r}
 survey %>%
     group_by(like_math, data_ever) %>%
     summarise(n = n()) %>%
@@ -233,7 +233,7 @@ ggplot(survey, aes(x = state)) + geom_bar()
 
 ## What is your favorite kind of pizza?
 
-```{r}
+```{r page.printed=TRUE}
 survey %>% select(pizza) %>% kable()
 ```
 
