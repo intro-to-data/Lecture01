@@ -1,0 +1,33 @@
+clean_name,raw_names,col_num
+submitted,submitted,1
+how_tall,How tall are you? Please answer in inches. Feel free to round off to the nearest inch. Or not. It doesn't matter.,2
+what_state,What state are you from?,3
+favorite_pizza,What is your favorite kind of pizza?,4
+what_year,"What year are you in at ACPHS?
+Select the option that best describes where you are in your educational journey.
+",5
+what_degree,"What is your Degree/Program/Major?
+Select the option which best describes your degree track:
+",6
+tried_use_data,In the past year have you tried to use data to make any important decisions or to understand the world you live in?,7
+data_tool_used,"What data analysis tools, if any, have you ever used?",8
+order_operations_test,"What is (5+1)/2 ?
+So, let's see how you do!
+",9
+good_at_counting,"Are you good at counting thing?
+This is related to the previous question.
+",10
+like_math,"Do you like math?
+1 + 1 = 2
+",11
+ever_analyzed_data,"Have you ever analyzed data?
+You know, with a spreadsheet, or any other tool.
+",12
+wondering_why,Are you wondering why I am asking you these questions?,13
+age,"What is your current age?
+Provide an integer answer (no decimals or fractions).
+",14
+career,"Have you ever considered a career as a data analyst?
+Something to ponder now if you haven't . . . .
+",15
+climate,How strong is your belief that humans cause climate change?,16

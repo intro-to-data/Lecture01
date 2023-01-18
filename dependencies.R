@@ -3,7 +3,10 @@
 p <- c(
     "ggrepel",
     "knitr",
+    "lubridate",
     "markdown",
+    "revealjs",
+    "rio",
     "tidyverse"
 )
 install.packages(p)
