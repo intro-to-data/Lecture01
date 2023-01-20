@@ -5,6 +5,7 @@ output: html_notebook
 
 # Learning Objectives:
 
+- Discuss Things
 - Learn about notebooks
 - What is a data frame?
     - Rows V columns
@@ -14,6 +15,14 @@ output: html_notebook
 - How to run a code chunk
 - How to render a notebook
 - Structure of a R command (function)
+
+
+# Discuss Things
+
+- What was (is) your reaction to knowing I would use the survey results in class?
+- How do you feel about Governor Hochul's changes to defined races in New York?
+- 
+
 
 
 # Notebooks
@@ -40,12 +49,20 @@ class survey.
     - Or use the keyboard shortcut, `Ctrl+Shift+Enter`
 
 ```{r}
-rm(list = ls())
 library(tidyverse)
 library(ggrepel)
 data(starwars)
 ```
 
+- A R function is often a verb, such as `import()`.
+- Some functions, like `library()` are not verbs. 🤷
+- Immediately after a function is:
+    - an "open parenthesis",
+    - followed by one or more "parameters",
+    - followed by a "close parenthesis".
+- R code is composed of lots of "little" functions which are often chained together.
+    - This is also called functional composition. For our purposes, these two terms have basically the same meaning.
+    - Very different from SAS/SPSS syntax which is based around a smaller set of functions which are more powerful.
 
 
 # Data
@@ -74,11 +91,16 @@ le
 - To run a single line of code within a code chunk, `Ctrl+Enter`.
 
 ```{r}
+## Look!!!
+## We are using TWO (2) functions to draw a plot!
+## This is function chaining.
 ggplot(data = starwars, mapping = aes(x = homeworld)) +
     geom_bar()
 ```
 
-I can't read the X Axis can you?
+- **Oops:** I can't read the X Axis can you?
+- Notice how RStudio superimposes formatting on our markdown.
+
 
 
 ```{r}

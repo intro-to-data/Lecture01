@@ -3,6 +3,8 @@ title: "Week 01, Lecture 02"
 output: html_notebook
 ---
 
+
+
 # Lecture Goals:
 
 - Introduce:
@@ -10,6 +12,8 @@ output: html_notebook
     - R scripts
 - Who are you?
 - Look at some R code and how this code connects to useful concepts.
+
+
 
 # Introduce: RMarkdown notebooks
 
@@ -36,10 +40,12 @@ output: html_notebook
 
 # R scripts
 
-For example, `data/clean_data.R`.
+For example, [data/clean_data.R](data/clean.R)
 
-- Script I wrote to remove identifying information from the class survey and make it easier to work with.
-- **Note:** The raw class survey document is not part of what I will share with the class.
+- A script I wrote to:
+    - remove identifying information from the class survey
+    - and make it easier to work with.
+- Discuss: What was (is) your reaction to knowing I would use the survey results in class?
 
 
 
@@ -49,7 +55,9 @@ For example, `data/clean_data.R`.
 - Now I'd like to take a stab at introducing you, as a group. 
 - And discuss a few things about the nature of data along the way!
 
-## Setup
+
+
+# Setup
 
 - This document is very similar to the documents I will share with you for labs.
     - When you open a project in RStudio Cloud, you will find all lecture notes and lab materials.
@@ -57,7 +65,7 @@ For example, `data/clean_data.R`.
 - You will find a "Setup" section in each lab.Rmd I give you.
 - You _must_ run this section of code _before_ attempting to complete the lab.
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 library(knitr)
 library(rio)
 library(tidyverse)
@@ -96,7 +104,7 @@ What is in ↑?
 - This data is "tidy".
     - If you would like to learn more about tidy data than you think possible, [Tidy Data](https://vita.had.co.nz/papers/tidy-data.pdf)
 
-## Numeric
+## Numeric Data Examples
 
 ### Age
 
@@ -138,7 +146,6 @@ survey |>
   tally()
 ```
 
-
 Let's talk about numbers:
 
 - Age is an example of a numeric data type.
@@ -151,8 +158,8 @@ Let's talk about numbers:
     - The aggregate data is at the class grain because it contains all
       the answers for all the students in the class.
 - Assuming everyone answered this question honestly, this is a good representation of the answers given
-
-## Categorical
+ 
+## Categorical Data Examples
 
 ### Degree
 
@@ -163,7 +170,7 @@ ggplot(survey, aes(x = what_degree)) +
   geom_bar()
 ```
 
-- Unlike age, ther's no average here.
+- Unlike age, there's no average here.
 - The measure of centrality we use is mode which is simply the largest group.
 
 ### What Year?
@@ -180,7 +187,7 @@ ggplot(survey, aes(x = what_year)) +
 
 ### Like Math?
 
-**Question:** x
+**Question:** Do you like math? 1 + 1 = 2
 
 ```{r}
 ggplot(survey, aes(x = like_math)) +
@@ -225,7 +232,7 @@ From the link:
 Federal Race Categories:
 
 - [Census Quick Facts: Race](https://www.census.gov/quickfacts/fact/note/US/RHI625219)
-- OMB requires that race data be collectd for a minimum of five groups:
+- OMB requires that race data be collected for a minimum of five groups:
     - White,
     - Black or African American,
     - American Indian or Alaska Native,
@@ -251,32 +258,11 @@ EHRs, do not allow a person to select more than one race.
   complicated because these numbers are usually reported out based on
   only a single race.
 
-Discuss (Friday):
-- Reactions?
-- How do you feel about Hispanic not being a race?
-- How can we do better?
-
-### Ever used data?
-
-**Question:** In the past year have you tried to use data to make any important decisions or to understand the world you live in?
-
-```{r}
-survey$tried_use_data
-```
-
-- This kind of free text entry is a special case.
-- There are categories here. For example, I could group these answers into:
-    - Yes, No, Unknown, NA
-- But there is an important difference between this and the other categoricals we have evaluated.
-  -  YOU would not choose the group.
-  -  As arbitrary as this survey is - you had the power to group yourself.
-  -  In this case, the researcher (me!) would have that power.
-  -  And this can be a powerful way to explore a small data set. This is often done early in a research process. But it is always important to know when the respondents choose the group and when someone else chooses the group based on free text entries.
+Discuss (Friday): Reactions?
 
 ### Ever analyzed data?
 
 **Question:** Have you ever analyzed data? You know, with a spreadsheet, or any other tool.
-
 
 ```{r}
 ggplot(survey, aes(x = ever_analyzed_data)) +
@@ -289,7 +275,7 @@ OK, so let's pause for a moment. There's more we could do here.
 survey |>
   group_by(like_math, ever_analyzed_data) |>
   summarise(n = n()) |>
-  pivot_wider(names_from = "ever_analyzed_data", values_from = n)
+  pivot_wider(names_from = "like_math", values_from = n)
 ```
 
 - This puts the answers for `like_math` in the first column and the
@@ -309,23 +295,14 @@ survey |>
 survey |>
   group_by(climate) |>
   summarise(n = n()) |>
-  mutate(p = round(n / sum(n), 1))
+  mutate(p = 100*round(n / sum(n), 1))
 ```
-
+- Demonstration of calculating percents.
 - This could have also been asked as a Likert scale.
 - And that's a numeric type answer that ordinal.
 - Can anyone tell me what ordinal means?
 
-### What state
-
-**Question:** What state are you from?
-
-```{r}
-ggplot(survey, aes(x = what_state)) +
-  geom_bar()
-```
-
-## Free Text
+## Free Text Examples
 
 ## Favorite kind of pizza?
 
@@ -340,3 +317,21 @@ survey |>
 - This question is not actually entirely arbitrary.
 - In years past, this class was taught on Thursday evenings and I bought pizza for the midterm/final exams.
 - Should I continue this tradition?
+
+### Tried to use data?
+
+**Question:** In the past year have you tried to use data to make any important decisions or to understand the world you live in?
+
+```{r}
+survey |> select(id, tried_use_data) |> kable()
+```
+
+- This kind of free text entry is a special case.
+- There are categories here. For example, I could group these answers into:
+    - Yes, No, Unknown, NA
+- Important difference with other categorical variables we have seen:
+  -  YOU (respondent) would not choose the group.
+  -  The researcher (me!) would have that power.
+  -  This can be a powerful way to explore a small data set.
+  
+This is often done early in a research process. But it is always important to know when the respondents choose the group and when someone else chooses the group based on free text entries.

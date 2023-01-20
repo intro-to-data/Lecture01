@@ -2,20 +2,25 @@
 
 ## SETUP =======================================================================
 library(dplyr)
+library(lubridate)
 library(readr)
+library(stringr)
 library(tibble)
 raw_data_file <- "data/ITD Class Survey Survey Student Analysis Report.csv"
 survey_data_file <- "data/survey.csv"
 
 ## DATA ========================================================================
-raw <- read_csv(raw_data_file) |> mutate(submitted = date(ymd_hms(submitted)))
+raw <- 
+  read_csv(raw_data_file) |>
+  mutate(submitted = date(ymd_hms(submitted)))
+
 names_raw <- names(raw)
 names_clean <- names_raw
-if (interactive()) {
-    library(knitr)
-    glimpse(raw)
-    kable(names_raw)
-}
+#if (interactive()) {
+#    library(knitr)
+#    glimpse(raw)
+#    kable(names_raw)
+#}
 
 # Convenience function used below to make sure I don't make a future edit
 # that breaks my string searches below. I was using straight col numbers, but it
