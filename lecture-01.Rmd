@@ -27,9 +27,6 @@ output:
 
 
 
-
-
-
 # Who am I?
 
 - Andy Choens, MSW
@@ -77,14 +74,6 @@ knitr::include_graphics("./includes/Data_Science_VD.png")
 
 Drew Conway:[The data science Venn diagram](http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram)
 
-
-# The data life cycle
-
-```{r echo=FALSE, out.width='80%'}
-knitr::include_graphics("https://d33wubrfki0l68.cloudfront.net/795c039ba2520455d833b4034befc8cf360a70ba/558a5/diagrams/data-science-explore.png")
-```
-
-Hadley Wickham: [Introduction, R For Data Science](https://r4ds.had.co.nz/explore-intro.html)
 
 
 

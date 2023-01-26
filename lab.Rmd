@@ -138,7 +138,7 @@ our analysis.
 
 ```{r}
 lighter_starwars <-
-    starwars %>%
+    starwars |>
     filter(mass < 1000)
 
 ggplot(

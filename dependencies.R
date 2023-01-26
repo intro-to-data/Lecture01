@@ -4,7 +4,7 @@ p <- c(
     "ggrepel",
     "knitr",
     "lubridate",
-    "markdown",
+    "rmarkdown",
     "revealjs",
     "rio",
     "tidyverse"
