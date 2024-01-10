@@ -1,107 +1,91 @@
 ---
 title: "Star Wars Lab"
-output: html_notebook
+output: html
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
 # Learning Objectives:
 
-- Discuss Things
+- Have some fun.
 - Learn about notebooks
 - What is a data frame?
-    - Rows V columns
-    - What is a row of data?
-    - Data types
+  - Rows V columns
+  - What is a row of data?
+  - Data types
 - Tour of the RStudio Cloud interface
 - How to run a code chunk
 - How to render a notebook
 - Structure of a R command (function)
 
-
-# Discuss Things
-
-- What was (is) your reaction to knowing I would use the survey results in class?
-- How do you feel about Governor Hochul's changes to defined races in New York?
-- 
-
-
-
 # Notebooks
 
-Our work will be managed in documents called notebooks. This document
-you are viewing is a notebook. A RMarkdown notebook combines plain
-text with R code to create a reproducible document.
+Our work will be managed in documents called notebooks. This document you are viewing is a notebook. A RMarkdown notebook combines plain text with R code to create a reproducible document.
 
-The lecture notes are a notebook. The lab is a notebook. The work we
-do for this class will always be in a notebook. I will make R scripts
-available for transparency when I hide things from you.
-
-In the data folder, there is a R script I wrote to scrub PII from the
-class survey.
-
+The lecture notes are a notebook. The lab is a notebook. The work we do for this class will always be in a notebook. I will make all R scripts used in this course available for you to study/review.
 
 # Setup
 
-- To make sure you have everything loaded you will need for the
-  lecture/lab, look for a section labeled "Setup" and run the code
-  block in that section of the notebook.
+- To make sure you have everything loaded you will need for the lecture/lab, look for a section labeled "Setup" and run the code block in that section of the notebook.
 - Run the code chunk now, PLEASE!!!
-    - Use the little green arrow to the right of the editor window.
-    - Or use the keyboard shortcut, `Ctrl+Shift+Enter`
+  - Use the little green arrow to the right of the editor window.
+  - Or use the keyboard shortcut, `Ctrl+Shift+Enter`
 
 ```{r}
+#| echo: false
+
+# Loads two packages into our current session.
 library(tidyverse)
 library(ggrepel)
+
+# Loads Star Wars data into our current session.
 data(starwars)
 ```
 
 - A R function is often a verb, such as `import()`.
 - Some functions, like `library()` are not verbs. 🤷
 - Immediately after a function is:
-    - an "open parenthesis",
-    - followed by one or more "parameters",
-    - followed by a "close parenthesis".
+  - an "open parenthesis",
+  - followed by one or more "parameters",
+  - followed by a "close parenthesis".
 - R code is composed of lots of "little" functions which are often chained together.
-    - This is also called functional composition. For our purposes, these two terms have basically the same meaning.
-    - Very different from SAS/SPSS syntax which is based around a smaller set of functions which are more powerful.
-
+  - This is also called functional composition. For our purposes, these two terms have basically the same meaning.
+  - Very different from SAS/SPSS syntax which is based around a smaller set of functions which are more powerful.
 
 # Data
 
 ```{r}
+# This prints the data into our notebook.
 starwars
 ```
 
 - Observe how the results of the code are embedded in the notebook.
-    - When you run the code in a notebook, R creates a new file,
-      `lab.nb.html`, which contains the original code AND the HTML
-      containing the output.
-    - In a healthcare setting, this `nb.html` file must be carefully
-      protected because it can contain PHI.
-    - A .Rmd file only contains PHI if you enter it manually into the
-      text or code, and why on earth would you do that?
+  - When you run the code in a notebook, R creates a new file, `lab.nb.html`, which contains the original code AND the HTML containing the output.
+  - In a healthcare setting, this `nb.html` file must be carefully protected because it can contain PHI.
+  - A .qmd file only contains PHI if you enter it manually into the text or code, and why on earth would you do that?
 - `starwars` is a data frame
 - What does a single row of data represent?
 - What kinds of data types do we have?
 
-le
-
 # Plotting
 
 - Our first few lectures/labs are focused on plotting/graphing data.
+- A plot is a graphical form of summarization.
+  - From many data points to a single plot.
+  - Helps us focus on the patterns, not the individual details.
 - To run a single line of code within a code chunk, `Ctrl+Enter`.
 
 ```{r}
 ## Look!!!
 ## We are using TWO (2) functions to draw a plot!
-## This is function chaining.
+## This is a form of function chaining/composition.
 ggplot(data = starwars, mapping = aes(x = homeworld)) +
     geom_bar()
 ```
 
 - **Oops:** I can't read the X Axis can you?
 - Notice how RStudio superimposes formatting on our markdown.
-
-
 
 ```{r}
 ggplot(
@@ -112,7 +96,6 @@ ggplot(
 Much better!
 
 ```{r}
-
 # Can YOU draw a bar plot showing the number of characters by species?
 
 ```
@@ -125,7 +108,6 @@ ggplot(
 
 We've got ONE REALLY heavy character.
 
-
 ```{r}
 ggplot(
     data = starwars, mapping = aes(x = mass, y = height, label = name)) +
@@ -133,8 +115,7 @@ ggplot(
     geom_text_repel()
 ```
 
-Damn Hutts. Drop all beings which weigh more than 1,000 pounds from
-our analysis.
+We can (always) blame the Hutts. Drop all beings which weigh more than 1,000 pounds from our analysis.
 
 ```{r}
 lighter_starwars <-
@@ -149,7 +130,7 @@ ggplot(
     geom_text_repel()
 ```
 
-And now a basic regression line.
+Add a basic regression line.
 
 ```{r}
 ggplot(

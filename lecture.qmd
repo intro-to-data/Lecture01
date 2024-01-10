@@ -1,0 +1,178 @@
+---
+title: "Week 01 Lecture"
+format: revealjs
+editor: 
+  markdown: 
+    wrap: 80
+---
+
+
+
+# Lecture Goals
+
+- Reminders
+- Who am I?
+- What is data science?
+- Course objectives
+- Class structure
+- Lab structure
+- Questions/Concerns
+
+
+
+# Reminders
+
+-   Please finish the class survey!!!
+-   Posit Cloud
+    -   You should have received an invitation to join Posit Cloud.
+    -   If you have not received an invitation via email; please contact me.
+        -   Andrew.Choens@acphs.edu
+
+
+
+# Who am I?
+
+- **Hornby Zeller Associates:** Research and performance evaluations of foster care, elder care, and other human services agencies.
+- **DOH (OQPS):** Led the internal evaluation of the New York Sate Health Homes program.
+- **Acuitas Health:** Worked with local providers to help them succeed in Value Based Care.
+- **DOH (OHIP)**: Working with Medicaid data.
+- I have a background in computer programming, statistical analysis, health care, child welfare, and elder care.
+
+::: {.notes}
+- DOH (OQPS): Employed by IPRO.
+- Acuitas Health: Built and led the data science team.
+- DOH(OHIP): Employed by NYSTEC.
+:::
+
+
+
+# What is data science? (1/2)
+
+[From Wikipedia: Data science](https://en.wikipedia.org/wiki/Data_science)
+
+> Data science is a "concept to unify statistics, data analysis, machine
+> learning and their related methods" in order to "understand and analyze actual
+> phenomena" with data. It employs techniques and theories drawn from many
+> fields within the context of mathematics, statistics, information science, and
+> computer science.
+
+::: {.notes}
+Data science is, yes, a bit math heavy. But it is multi-disciplinary at its core.
+:::
+
+
+
+# What is data science? (2/2)
+
+[From Wikipedia: Data science](https://en.wikipedia.org/wiki/Data_science)
+
+> Turing award winner Jim Gray imagined data science as a "fourth paradigm" of
+> science (empirical, theoretical, computational and now data-driven) and
+> asserted that "everything about science is changing because of the impact of
+> information technology" and the data deluge.
+
+::: {.notes}
+Others have argues that is is the fourth paradigm.
+
+1. Empirical science is based on observation of the natural world.
+  - This would include experimentation, etc.
+2. Theoretical science is based on, well, theories. We most closely associate this with fields such as math and physics, but it exists in all fields of science, including public health.
+  - And I'm sure you've been taught, repeatedly, about the scientific process. Develop a theory and then prove/disprove it with an experiment. And that's the interplay between these first two paradigms.
+3. Computational: The ability to use computers to physically model reality has had profound impacts on scientific fields such as physics and chemistry. For example, our understanding of the long-term impacts of climate change are driven by computational models of how all these factors interrelate and create feedback loops.
+4. This idea of a fourth paradigm comes from a 2009 book cleverly titled "The Fourth Paradigm" which argues that data science presents a paradigmatic shift in how science is done.
+
+And I both agree with this and disagree with this. On the one hand, empirical science has always been driven by data. What has changed, fundamentally, is the scale and scope of this data. And the ease with which we can apply science to data.
+
+And a big part of this is that the scale and scope of data itself has fundamentally changed. A linear regression is still just a linear regression. But now, I often don't need to go out and gather data specifically to look for a relationship. I often have that data to-hand, simply because of other data gathering processes already in place.
+
+And for science, this is a big deal. Imagine Darwin if he had not needed to travel to the Galapagos islands to learn what was there, because that is the world we live in.
+
+And while this creates new opportunities, it creates new risks. Are there biases in the data? Are there omissions?
+:::
+
+
+
+# The Fourth Paradigm of Science
+
+```{r}
+#| out.width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("./includes/data_science_vd.png")
+```
+
+Drew Conway:[The data science Venn
+diagram](http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram)
+
+::: {.notes}
+And I feel that this sums up the interdisciplinary nature of this.
+:::
+
+
+# Course objectives
+
+- Learn how to think with data.
+    - The fourth paradigm of science.
+    - The data life cycle.
+    - R!
+- Learn about and discuss the role of data in our society.
+- Learn about and discuss sources of bias in data.
+
+::: {.notes}
+You, probably, already know you are going to learn some R in this course.
+
+What you may not know is that I want to introduce you to being part of this fourth paradigm. Because like or not, this is the world we all live in. And you can either participate or you can sit on the sidelines. 
+
+And I believe we need people from all walks of life, public health, social work, physics, engineering, and car mechanics to participate in the data-driven discussions we are going to be having in the years ahead or we will fall into one of these in-between danger zones.
+:::
+
+
+
+# Class structure
+
+- Lecture will be uploaded to Canvas every week.
+- Readings are assigned weekly.
+- Grades:
+  - Midterm, Final, one writing project.
+  - Beyond The Numbers:
+    - I want you to think about the role of data in our society.
+    - These *are* worth points.
+- Homework: The Lecture/Reading assignments are "quizzes" in Canvas and I will ask you some questions or challenge you with a small bit of R code to try to track your understanding/engagement with the class.
+
+
+
+# Lab structure
+
+- Labs will be completed using a programming language called R.
+- I will provide a programming environment for you via a tool called Posit Cloud.
+  - Have you received an invite?
+- Learning how to THINK about/with data is more important than any single tool.
+- Lab groups/demonstrations
+
+If you want to install on your personal laptop, let me know.
+
+::: {.notes}
+- I want to do something new this year.
+- I have assigned each of you to a lab group and
+  - I will ask that you sit with your lab group at a table.
+- I want you, as a group, to try to complete the lab before our time on Friday.
+  - And I wll therefore not assign agonizing programming homework outside of this expectation.
+- Because the only way you learn how to do something like program is to put your fingers to the keyboard.
+- But it can be frustrating to tackle this by yourself.
+- And throughout the semester, I will ask a group to come forward and present the lab to us as a group.
+  - What did they find challenging?
+  - How did they answer it?
+  - etc.
+  - And I will support that group so you knock it out of the park.
+  - But perhaps you will come up with a better way of explaining this stuff than I can.
+:::
+
+
+
+# Questions/Concerns
+
+- Learning how to program is not easy.
+- Google, Stack Overflow, etc. are your friend.
+- Office Hours: Fridays
+  - 10:00 - 11:00 &
+  - 12:30 - 14:00
+  - HAB022
