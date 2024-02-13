@@ -2,6 +2,7 @@
 
 p <- c(
     "ggrepel",
+    "httpgd",
     "knitr",
     "lubridate",
     "markdown",
@@ -12,3 +13,5 @@ p <- c(
     "tidyverse"
 )
 install.packages(p)
+
+unlink("lab-answers.qmd")

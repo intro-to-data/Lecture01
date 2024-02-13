@@ -33,6 +33,7 @@ The lecture notes are a notebook. The lab is a notebook. The work we do for this
   - Or use the keyboard shortcut, `Ctrl+Shift+Enter`
 
 ```{r}
+#| label: setup
 #| echo: false
 
 # Loads two packages into our current session.
@@ -97,7 +98,9 @@ Much better!
 
 ```{r}
 # Can YOU draw a bar plot showing the number of characters by species?
-
+ggplot(
+    data = starwars, mapping = aes(x = species)) +
+    geom_bar()
 ```
 
 ```{r}
