@@ -10,19 +10,20 @@ editor:
 
 1. Have some fun.
 2. Get into our lab groups.
-3. Tour of the RStudio Cloud interface
-4. Learn about notebooks
+3. Accessing labs.
+4. Tour of the RStudio Cloud interface
+5. Learn about notebooks
   - Code vs Visual Render
-5. What is a data frame?
+6. What is a data frame?
   - Rows V columns
   - What is a row of data?
   - Data types
-6. How to run a code chunk
-7. How to render an entire notebook
-8. Global Environment and how to clear it (sweep).
+7. How to run a code chunk
+8. How to render an entire notebook
+9. Global Environment and how to clear it (sweep).
   - Switching from one document to another.
-9. Structure of a R command (function)
-10. (15 minutes) Each group needs to come up with one topic they would like explore during this class, at least briefly. This is not a promise, but it is interesting to explore data that interests you. Look for a topic which we can use to explore data and answer questions and for which there is a data set.
+10. Structure of a R command (function)
+11. (15 minutes) Each group needs to come up with one topic they would like explore during this class, at least briefly. This is not a promise, but it is interesting to explore data that interests you. Look for a topic which we can use to explore data and answer questions and for which there is a data set.
 
 
 And, honestly, that's enough for one night.
