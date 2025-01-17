@@ -8,16 +8,22 @@ editor:
 
 # Learning Objectives:
 
-- Have some fun.
-- Learn about notebooks
-- What is a data frame?
+1. Have some fun.
+2. Get into our lab groups.
+3. Tour of the RStudio Cloud interface
+4. Learn about notebooks
+  - Code vs Visual Render
+5. What is a data frame?
   - Rows V columns
   - What is a row of data?
   - Data types
-- Tour of the RStudio Cloud interface
-- How to run a code chunk
-- How to render a notebook
-- Structure of a R command (function)
+6. How to run a code chunk
+7. How to render an entire notebook
+8. Global Environment and how to clear it (sweep).
+  - Switching from one document to another.
+9. Structure of a R command (function)
+
+And, honestly, that's enough for one night.
 
 # Notebooks
 
