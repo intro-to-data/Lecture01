@@ -22,6 +22,8 @@ editor:
 8. Global Environment and how to clear it (sweep).
   - Switching from one document to another.
 9. Structure of a R command (function)
+10. (15 minutes) Each group needs to come up with one topic they would like explore during this class, at least briefly. This is not a promise, but it is interesting to explore data that interests you. Look for a topic which we can use to explore data and answer questions and for which there is a data set.
+
 
 And, honestly, that's enough for one night.
 
